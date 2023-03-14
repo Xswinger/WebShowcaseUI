@@ -1,2 +1,1 @@
-console.log("color")
-console.log("change")
+console.log("hello world")
