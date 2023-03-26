@@ -1,7 +1,8 @@
-.horizontal-container {
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1rem;
-    justify-items: center;
+.container {
+    display: inline-flex;
+    min-height: 10vh;
+    gap: 25px;
+    background-color: #696969;
+    justify-content: space-around;
+    border-radius: 20px;
 }

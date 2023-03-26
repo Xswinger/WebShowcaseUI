@@ -21,7 +21,7 @@ const inputComponent = (props) => {
     return (
         <div>
             <label htmlFor={props.name}>{props.label}</label>
-            <input
+            <input className={style.container}
                 type="text"
                 name={props.name}
                 value={inputValue}

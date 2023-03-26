@@ -14,9 +14,9 @@ const dropdownComponent = ({options, label}) => {
     return (
         <div>
             <label htmlFor="dropdown">{label}</label>
-            <select id="dropdown" value={selectedValue} onChange={handleChange}>
+            <select id="dropdown" value={selectedValue} onChange={handleChange} className={style.container}>
                 {options.map((option) => (
-                    <option key={option.value} value={option.value}>
+                    <option key={option.value} value={option.value} className={style.container}>
                         {option.label}
                     </option>
                 ))}
