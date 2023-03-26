@@ -1,7 +1,8 @@
 import './App.css';
-import PositionWrapper from "./ordercomponent/positionsWrapperComponent/positionsWrapperComponent"
-import CustomerComponent from './ordercomponent/customerComponent/CustomerComponent';
-import OrderNumberComponent from './ordercomponent/orderNumberComponent/OrderNumberComponent';
+import PositionWrapper from "./positionsWrapperComponent/positionsWrapperComponent"
+import CustomerComponent from './customerComponent/CustomerComponent';
+import OrderNumberComponent from './orderNumberComponent/OrderNumberComponent';
+import OrderComponent from './ordercomponent/OrderComponent';
 
 const App = () => {
     return (
@@ -13,6 +14,7 @@ const App = () => {
                 <CustomerComponent/>
                 <OrderNumberComponent/>
                 <PositionWrapper/>
+                <OrderComponent/>
             </div>
         </div>
     );
