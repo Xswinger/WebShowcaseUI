@@ -11,8 +11,9 @@ function noteComponent() {
 
     return (
         <div className={style.notes}>
-            <h2>Notes</h2>
-            <textarea value={note} onChange={handleNoteChange} />
+            <label htmlFor={'note'}>Примечания:</label>
+            <br/>
+            <textarea name={'note'} value={note} onChange={handleNoteChange} className={style.container}/>
         </div>
     );
 }

@@ -4,13 +4,19 @@
 }
 
 .notes textarea {
-    width: 30%;
-    height: 20px;
+    width: 80%;
+    height: 25px;
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 0.25rem;
     font-size: 1rem;
     line-height: 1.5;
-    resize: vertical;
+    resize: none;
     margin-bottom: 1rem;
+}
+
+
+.container {
+    margin-top: 15px;
+    border-radius: 10px;
 }
