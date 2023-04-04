@@ -6,10 +6,9 @@
 
 .wrapper {
     display: inline-block;
-    background-color: #7e7e7e;
-    padding: 2px;
+    background-color: #abaaaa;
+    padding: 5px;
     border-radius: 2px;
-    margin: 2px;
 }
 
 .title {

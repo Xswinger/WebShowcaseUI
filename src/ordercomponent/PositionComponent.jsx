@@ -1,13 +1,13 @@
 import React from "react";
-import ColorComponent from "./colorcomponent/ColorComponent";
-import InputComponent from "./inputcomponent/InputComponent";
-import DropdownComponent from "./dropdowncomponent/DropdownComponent";
-import NoteComponent from "./notescomponent/NoteComponent";
-import GreyComponent from "./greycomponent/GreyComponent";
-import style from "./OrderComponent.module.css";
+import ColorComponent from "./positionComponents/colorcomponent/ColorComponent";
+import InputComponent from "./positionComponents/inputcomponent/InputComponent";
+import DropdownComponent from "./positionComponents/dropdowncomponent/DropdownComponent";
+import NoteComponent from "./positionComponents/notescomponent/NoteComponent";
+import GreyComponent from "./positionComponents/greycomponent/GreyComponent";
+import style from "./PositionComponent.module.css";
 
 
-const orderComponent = () => {
+const PositionComponent = () => {
     return (
         <div className={style.container}>
             <GreyComponent>
@@ -41,4 +41,4 @@ const orderComponent = () => {
     );
 }
 
-export default orderComponent;
+export default PositionComponent;

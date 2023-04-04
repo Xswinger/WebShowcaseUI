@@ -1,22 +1,22 @@
 import React from "react";
-import style from "./OrderNumberComponent.module.css";
+import style from "./InfoComponent.module.css";
 
-function OrderNumberTitle() {
+function CustomerTitle(props) {
     return (
         <div className={style.title}>
-            <span>Номер заказа</span>
+            <span>{props.title}</span>
         </div>
     )
 }
 
-const orderNumberComponent = () => {
+const infoComponent = (props) => {
     return (
         <div className={style.wrapper}>
-            <OrderNumberTitle/>
+            <CustomerTitle title={props.header}/>
             <br/>
             <input type={'text'} className={style.text}></input>
         </div>
     );
 }
 
-export default orderNumberComponent;
+export default infoComponent;

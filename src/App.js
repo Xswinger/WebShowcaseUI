@@ -1,8 +1,5 @@
 import './App.css';
-import PositionWrapper from "./positionsWrapperComponent/positionsWrapperComponent"
-import CustomerComponent from './customerComponent/CustomerComponent';
-import OrderNumberComponent from './orderNumberComponent/OrderNumberComponent';
-import OrderComponent from './ordercomponent/OrderComponent';
+import ContentWrapperComponent from './contentWrapper/ContentWrapperComponent'
 
 const App = () => {
     return (
@@ -11,10 +8,7 @@ const App = () => {
                 <h1 className={"App-title"}> Ввод заявки </h1>
             </header>
             <div className={"App-body"}>
-                <CustomerComponent/>
-                <OrderNumberComponent/>
-                <PositionWrapper/>
-                <OrderComponent/>
+                <ContentWrapperComponent/>
             </div>
         </div>
     );
