@@ -7,7 +7,12 @@ import GreyComponent from "./positionComponents/greycomponent/GreyComponent";
 import style from "./PositionComponent.module.css";
 
 
-const PositionComponent = () => {
+const PositionComponent = (props) => {
+
+    const handleRemoveClick = () => {
+        props.onRemove(props.index);
+    };
+
     return (
         <div className={style.container}>
             <GreyComponent>
@@ -36,6 +41,9 @@ const PositionComponent = () => {
             </GreyComponent>
             <GreyComponent>
                 <NoteComponent/>
+            </GreyComponent>
+            <GreyComponent>
+                <button onClick={handleRemoveClick}>Remove</button>
             </GreyComponent>
         </div>
     );
