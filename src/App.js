@@ -1,16 +1,21 @@
 import './App.css';
-import ContentWrapperComponent from './contentWrapper/ContentWrapperComponent'
+import React from 'react'
+import {
+    BrowserRouter as Router,
+    Route,
+    Routes
+} from 'react-router-dom';
+import {ContactPages, MainPages} from './pages/Pages'
+
 
 const App = () => {
     return (
-        <div className={"App-wrapper"}>
-            <header className={"App-header"}>
-                <h1 className={"App-title"}> Ввод заявки </h1>
-            </header>
-            <div className={"App-body"}>
-                <ContentWrapperComponent/>
-            </div>
-        </div>
+        <Router>
+            <Routes>
+                <Route path='/contact' element={<ContactPages/>}/>
+                <Route path='/' element={<MainPages/>}/>
+            </Routes>
+        </Router>
     );
 }
 

@@ -1,0 +1,29 @@
+.wrapper {
+    background-color: #abaaaa;
+    padding: 1%;
+    margin: 3%;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.buttons_wrapper {
+    margin: 0.5% 0.5% 0 0.5% ;
+}
+
+.accept_button, .back_button {
+    font-size: 1.2em;
+    margin: 4px 0 1px;
+    padding: 10px 20px;
+    border: none;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.accept_button {
+    background-color: #008008;
+}
+
+.back_button {
+    background-color: #ff0000;
+}
+

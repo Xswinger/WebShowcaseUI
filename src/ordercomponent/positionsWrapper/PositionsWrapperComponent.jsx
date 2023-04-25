@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import style from "./PositionsWrapperComponent.module.css"
 import PositionComponent from '../PositionComponent'
-import PlusButtonComponent from "../../contentWrapper/ addbutton/PlusButtonComponent";
+import PlusButtonComponent from "../../contentWrapper/addButton/PlusButtonComponent";
 
 const positionsWrapper = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks

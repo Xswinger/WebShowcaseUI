@@ -1,0 +1,15 @@
+.field {
+    background-color: #abaaaa;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.title {
+    display: inline-block;
+}
+
+.text {
+    color: #000000;
+    font-size: 12px;
+    border-color: #000000;
+}

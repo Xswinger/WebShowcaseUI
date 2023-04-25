@@ -1,0 +1,26 @@
+.wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #282c34;
+}
+
+.body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 7px 7px 0 0;
+}
+
+.header {
+    background-color: #282c34;
+    margin: 0;
+    height: 10vh;
+}
+
+.title {
+    color: #ffffff;
+    padding: 2vh 2vh 2vw 3vw;
+    margin: 0;
+}
