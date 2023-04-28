@@ -16,6 +16,7 @@ const inputComponent = (props) => {
         const intValue = parseInt(value);
         if (intValue >= 1 && intValue <= 99) {
             setInputValue(intValue.toString());
+            props.onChange("quantity", intValue);
         }
     }
     return (

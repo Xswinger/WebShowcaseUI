@@ -13,13 +13,17 @@ const PositionComponent = (props) => {
         props.onRemove(props.index);
     };
 
+    const handleOnChange = (field, value) => {
+        props.onChange(props.index, field, value);
+    }
+
     return (
         <div className={style.container}>
             <GreyComponent>
-                <ColorComponent/>
+                <ColorComponent onChange={handleOnChange}/>
             </GreyComponent>
             <GreyComponent>
-                <InputComponent name={'counter'} label={'Введите количество (1-99):'}/>
+                <InputComponent name={'counter'} label={'Введите количество (1-99):'} onChange={handleOnChange}/>
             </GreyComponent>
             <GreyComponent>
                 <DropdownComponent options={[
@@ -28,7 +32,7 @@ const PositionComponent = (props) => {
                     {value: 'option3', label: 'Профиль 3'},
                     {value: 'option4', label: 'Профиль 4'},
                     {value: 'option5', label: 'Профиль 5'},
-                ]} label={'Выберите профиль: '}/>
+                ]} label={'Выберите профиль: '} onChange={handleOnChange}/>
             </GreyComponent>
             <GreyComponent>
                 <DropdownComponent options={[
@@ -37,10 +41,10 @@ const PositionComponent = (props) => {
                     {value: 'option3', label: 'Артикул 3'},
                     {value: 'option4', label: 'Артикул 4'},
                     {value: 'option5', label: 'Артикул 5'},
-                ]} label={'Выберите Артикул: '}/>
+                ]} label={'Выберите Артикул: '} onChange={handleOnChange}/>
             </GreyComponent>
             <GreyComponent>
-                <NoteComponent/>
+                <NoteComponent onChange={handleOnChange}    />
             </GreyComponent>
             <GreyComponent>
                 <button onClick={handleRemoveClick}>Remove</button>

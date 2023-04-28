@@ -16,7 +16,8 @@ const colorComponent = (props) => {
 
     const handleColorSelection = (color) => {
         setSelectedColor(color);
-        console.log(color)
+        console.log(color);
+        props.onChange("color", color);
     };
 
     const itemsPerPage = 4; // Change this value to adjust number of items per page
