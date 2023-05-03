@@ -21,7 +21,6 @@ const positionsWrapperComponent = (props) => {
     };
 
     const handleChange = (id, field, value) => {
-        console.log("id: " + id + " field: " + field + " value: " + value);
         props.onChange(id, field, value);
     }
 

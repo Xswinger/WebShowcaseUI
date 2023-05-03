@@ -8,10 +8,7 @@ const ContentWrapperComponent = (props) => {
     const [actualData, setActualData] = useState(new Map());
 
     const handleRedirect = () => {
-        console.log('here');
-        //actualData - это поле, в котором хранится массив json-ов каждого заказа
-        //надо придумать, как информацию об этом поле перекинуть на другую страницу
-        console.log(actualData);
+
     }
 
     const handleOnChange = (id, field, value) => {
@@ -28,21 +25,20 @@ const ContentWrapperComponent = (props) => {
             data[id].quantity = value;
         }
         setActualData(data);
-        for (let i = 0; i < actualData.length; i++) {
-            console.log(actualData[i]);
-        }
+        props.onChange(actualData);
     }
 
     const handleOnAdd = (id) => {
-        setActualData([...actualData, {color: "", quantity: 0, profile: 'option1', article: 'option1', note: ""}])
+        const data = [...actualData, {color: "", quantity: 0, profile: 'option1', article: 'option1', note: ""}];
+        setActualData(data);
+        props.onChange(data);
     }
 
     const handleOnRemove = (index) => {
-        console.log('removed from content: ' + index);
         const data = [...actualData]
         data[index] = null;
         setActualData(data);
-        console.log(data);
+        props.onChange(data);
     }
 
 

@@ -2,10 +2,10 @@ import React from 'react'
 import style from './ContactInformationWrapper.module.css'
 import Form from './Form'
 
-const ContactInformationWrapper = () => {
+const ContactInformationWrapper = (props) => {
     return (
         <div className={style.wrapper}>
-            <Form/>
+            <Form onChange={props.onChange}/>
             <ButtonsWrapper/>
         </div>
     )

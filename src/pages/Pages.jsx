@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import ContentWrapperComponent from '../contentWrapper/ContentWrapperComponent'
 import style from './Pages.module.css'
 import ContactInformationWrapper from '../contactInformationComponents/ContactInformationWrapper'
@@ -8,37 +8,28 @@ const titles = [
     {text: 'Контактная информация'}
 ]
 
-// // eslint-disable-next-line react-hooks/rules-of-hooks
-// const [data, setData] = useState(0);
-//
-// const handleRedirect = (actualData) => {
-//     setData(actualData);
-//     console.log(actualData);
-// }
 
-
-export const MainPages = () => {
+export const MainPages = (props) => {
     return (
         <div>
             <div className={style.wrapper}>
                 <Header title={titles.at(0)}/>
                 <div className={style.body}>
-                    <ContentWrapperComponent
-                        // onRedirect={handleRedirect}
-                    />
+                    <ContentWrapperComponent onChange={props.onChange}/>
                 </div>
             </div>
         </div>
     )
 }
 
-export const ContactPages = () => {
+export const ContactPages = (props) => {
+
     return (
         <div>
             <div className={style.wrapper}>
                 <Header title={titles.at(1)}/>
                 <div className={style.body}>
-                    <ContactInformationWrapper/>
+                    <ContactInformationWrapper onChange={props.onChange}/>
                 </div>
             </div>
         </div>
