@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import style from '../ordercomponent/orderInfoComponent/InfoComponent/InfoComponent.module.css'
+import validator from 'validator/es'
 
 function CustomerTitle(props) {
     return (
@@ -47,8 +48,8 @@ const Form = (props) => {
     return (
         <div>
             <InputField header={'Организация'} onChange={handleChange}/>
-            <InputField header={'Телефон'} onChange={handleChange}/>
-            <InputField header={'Почта'} onChange={handleChange}/>
+            <PhoneField header={'Телефон'} onChange={handleChange}/>
+            <EmailField header={'Почта'} onChange={handleChange}/>
             <Checkbox header={'Доставка'} onChange={handleChange}/>
             <InputField header={'Адрес доставки'} onChange={handleChange}/>
             <InputField header={'Заказчик'} onChange={handleChange}/>
@@ -68,6 +69,54 @@ function InputField(props) {
             <CustomerTitle title={props.header}/>
             <br/>
             <input type={'text'} className={style.text} onChange={handleInputChange}/>
+        </div>
+    )
+}
+
+function PhoneField(props) {
+
+    let valid = true;
+
+    function validate(event) {
+        let value = event.target.value
+        props.onChange(props.header, value);
+        value = value.replace(/\D/g, '')
+            .replace(/^7/, '8')
+            .replace(' ', '')
+            .replace('(', '')
+            .replace(')', '')
+            .replace('-', '')
+
+        valid = !!validator.isMobilePhone(value, ['ru-RU']);
+
+    }
+
+
+    return(
+        <div>
+            <CustomerTitle title={props.header}/>
+            <br/>
+            <input type={'text'} className={valid ? style.default_input: style.bad_input} onChange={validate}></input>
+        </div>
+    )
+}
+
+function EmailField(props) {
+
+    let valid = true;
+
+    function validate(event) {
+        let value = event.target.value
+        props.onChange(props.header, value);
+
+        valid = !!validator.isEmail(value);
+    }
+
+    return(
+        <div>
+            <CustomerTitle title={props.header}/>
+            <br/>
+            <input type={'text'} className={valid ? style.default_input: style.bad_input} onChange={validate}></input>
         </div>
     )
 }

@@ -1,7 +1,15 @@
-.text {
+.default_input, .bad_input {
     color: #000000;
     font-size: 12px;
     border-color: #000000;
+}
+
+.default_input {
+    border-color: #000000
+}
+
+.bad_input {
+    border-color: #ff0000;
 }
 
 .wrapper {

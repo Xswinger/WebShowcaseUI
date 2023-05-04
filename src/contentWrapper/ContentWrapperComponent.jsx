@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import OrderInfoComponent from '../ordercomponent/orderInfoComponent/OrderInfoComponent'
 import PositionWrapper from '../ordercomponent/positionsWrapper/PositionsWrapperComponent'
 import style from './ContentWrapperComponent.module.css'
+import {useNavigate} from 'react-router-dom'
 
 const ContentWrapperComponent = (props) => {
 
@@ -52,9 +53,16 @@ const ContentWrapperComponent = (props) => {
 }
 
 function RedirectButton() {
+
+    const navigate = useNavigate()
+
+    const navigateContact = () => {
+        navigate('/contact')
+    }
+
     return (
         <div className={style.redirect_button_wrapper}>
-            <button className={style.redirect_button}> Оформить заказ</button>
+            <button className={style.redirect_button} onClick={navigateContact}> Оформить заказ</button>
         </div>
     )
 }

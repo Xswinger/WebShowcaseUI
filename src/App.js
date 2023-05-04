@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import {ContactPages, MainPages} from './pages/Pages'
 
+//
 
 const App = () => {
     const [globalDataPositions, setGlobalDataPositions] = useState(new Map())

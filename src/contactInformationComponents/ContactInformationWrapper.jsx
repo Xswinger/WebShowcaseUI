@@ -1,6 +1,8 @@
 import React from 'react'
 import style from './ContactInformationWrapper.module.css'
 import Form from './Form'
+import {useNavigate} from 'react-router-dom'
+
 
 const ContactInformationWrapper = (props) => {
     return (
@@ -21,9 +23,16 @@ function ButtonsWrapper() {
 }
 
 function BackButton() {
+
+    const navigate = useNavigate()
+
+    const navigateMain = () => {
+        navigate('/')
+    }
+
     return (
         <div>
-            <button className={style.back_button}> Вернуться </button>
+            <button className={style.back_button} onClick={navigateMain}> Вернуться </button>
         </div>
     )
 }
