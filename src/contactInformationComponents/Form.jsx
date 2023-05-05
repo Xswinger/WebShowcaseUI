@@ -87,7 +87,13 @@ function PhoneField(props) {
             .replace(')', '')
             .replace('-', '')
 
-        valid = !!validator.isMobilePhone(value, ['ru-RU']);
+        if (validator.isMobilePhone(value, ['ru-RU'])) {
+            valid = true;
+            console.log("mobile is true")
+        } else {
+            valid = false;
+            console.log("mobile is false")
+        }
 
     }
 
@@ -109,7 +115,14 @@ function EmailField(props) {
         let value = event.target.value
         props.onChange(props.header, value);
 
-        valid = !!validator.isEmail(value);
+        if (validator.isEmail(value)) {
+            valid = true;
+            console.log("email is true")
+        } else {
+            valid = false;
+            console.log("email is true")
+        }
+
     }
 
     return(
