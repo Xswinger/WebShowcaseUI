@@ -8,10 +8,6 @@ const ContentWrapperComponent = (props) => {
 
     const [actualData, setActualData] = useState(new Map());
 
-    const handleRedirect = () => {
-
-    }
-
     const handleOnChange = (id, field, value) => {
         const data = [...actualData];
         if (field === 'профиль:') {
@@ -47,7 +43,7 @@ const ContentWrapperComponent = (props) => {
         <div className={style.wrapper}>
             <OrderInfoComponent/>
             <PositionWrapper onChange={handleOnChange} onAdd={handleOnAdd} onRemove={handleOnRemove}/>
-            <RedirectButton onClick={handleRedirect}/>
+            <RedirectButton/>
         </div>
     )
 }

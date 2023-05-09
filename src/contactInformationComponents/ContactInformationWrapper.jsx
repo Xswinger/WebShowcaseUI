@@ -8,15 +8,15 @@ const ContactInformationWrapper = (props) => {
     return (
         <div className={style.wrapper}>
             <Form onChange={props.onChange}/>
-            <ButtonsWrapper/>
+            <ButtonsWrapper onClick={props.onClick}/>
         </div>
     )
 }
 
-function ButtonsWrapper() {
+function ButtonsWrapper(props) {
     return (
         <div className={style.buttons_wrapper}>
-            <AcceptButton/>
+            <AcceptButton onClick={props.onClick}/>
             <BackButton/>
         </div>
     )
@@ -37,10 +37,10 @@ function BackButton() {
     )
 }
 
-function AcceptButton() {
+function AcceptButton(props) {
     return (
         <div>
-            <button className={style.accept_button}> Подтвердить заказ </button>
+            <button className={style.accept_button} onClick={props.onClick}> Подтвердить заказ </button>
         </div>
     )
 }

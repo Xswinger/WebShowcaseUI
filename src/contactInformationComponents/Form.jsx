@@ -96,7 +96,7 @@ function PhoneField(props) {
         <div>
             <CustomerTitle title={props.header}/>
             <br/>
-            <input type={'text'} className={valid ? style.default_input: style.bad_input} onChange={validate}></input>
+            <input type={'text'} className={valid ? style.default_input : style.bad_input} onChange={validate}/>
         </div>
     )
 }
