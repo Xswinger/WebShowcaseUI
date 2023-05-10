@@ -29,7 +29,7 @@ export const ContactPages = (props) => {
             <div className={style.wrapper}>
                 <Header title={titles.at(1)}/>
                 <div className={style.body}>
-                    <ContactInformationWrapper onChange={props.onChange}/>
+                    <ContactInformationWrapper onChange={props.onChange} onClick={props.onClick}/>
                 </div>
             </div>
         </div>

@@ -6,5 +6,33 @@
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+_
+/src/ordercomponent/PositionComponent.module.css,b\5\b5114e498ab3d4298fa9e81e2f353291b64c6293
 ;
 src/App.css,a\a\aa7165aefcf8ee3d73539e99ab007daf1aa18d8d
+u
+Esrc/ordercomponent/orderInfoComponent/InfoComponent/InfoComponent.jsx,3\c\3cce4fa02d818daeccaa6ee26384ff5774d0f7d6
+|
+Lsrc/ordercomponent/orderInfoComponent/InfoComponent/InfoComponent.module.css,a\d\adedd3be07aee2d68dc3e4e112515b280f9f222c
+s
+Csrc/ordercomponent/orderInfoComponent/OrderInfoComponent.module.css,2\a\2ae3fad9d4060e2402a48dadaed42ee71d0a4688
+x
+Hsrc/ordercomponent/positionsWrapper/PositionsWrapperComponent.module.css,b\e\beae78d3e93aa3c47abf04e3ee8f8eb0120b50a0
+u
+Esrc/ordercomponent/positionComponents/greycomponent/GreyComponent.jsx,9\1\91a41af86af6024b12786b50b6119e30c3f3a83a
+}
+Msrc/ordercomponent/positionComponents/dropdowncomponent/DropdownComponent.jsx,8\d\8d7b21c4cbdc59ff33f3652048c91c20c8180213
+w
+Gsrc/ordercomponent/positionComponents/colorcomponent/ColorComponent.jsx,8\e\8eee4106828562843b8e77ff03e87517a4956b17
+ç
+]src/ordercomponent/positionComponents/colorcomponent/squarecomponent/ColorSquareComponent.jsx,d\1\d166c9174e4ca6479d426198c17ce86c7a1e2223
+î
+dsrc/ordercomponent/positionComponents/colorcomponent/squarecomponent/ColorSquareComponent.module.css,3\3\3345628cdb5772fbfbde3165c79ff1b897ab38c4
+v
+Fsrc/ordercomponent/positionComponents/notescomponent/NoteComponent.jsx,f\1\f1b626923d033edb794c38348c661a6f6a1ea5f8
+e
+5src/contentWrapper/ContentWrapperComponent.module.css,8\0\80adbdbf42b03f0fa302e24b063c2d6c181fbc13
+w
+Gsrc/ordercomponent/positionComponents/inputcomponent/InputComponent.jsx,7\f\7f37156d9189dcc5e34fd004f759aecd8a2d3582
+u
+Esrc/contactInformationComponents/ContactInformationWrapper.module.css,f\9\f96855af4073c0a67344a24bd32cd4ebff36be91

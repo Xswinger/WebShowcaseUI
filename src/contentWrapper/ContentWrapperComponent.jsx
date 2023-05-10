@@ -10,10 +10,6 @@ const ContentWrapperComponent = (props) => {
     const [actualData, setActualData] = useState(new Map());
     const [click, setClick] = useState(0);
 
-    const handleRedirect = () => {
-
-    }
-
     const handleOnChange = (id, field, value) => {
         const data = [...actualData];
         if (field === 'профиль:') {
@@ -52,7 +48,7 @@ const ContentWrapperComponent = (props) => {
                 {/*<PlusButtonComponent onAdd={handleOnAdd} onClick={}/>*/}
             </div>
             <PositionWrapper onChange={handleOnChange} onRemove={handleOnRemove}/>
-            <RedirectButton onClick={handleRedirect}/>
+            <RedirectButton/>
         </div>
     )
 }

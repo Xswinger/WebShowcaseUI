@@ -29,18 +29,14 @@ const PositionComponent = (props) => {
                 <DropdownComponent options={[
                     {value: 'option1', label: 'Профиль 1'},
                     {value: 'option2', label: 'Профиль 2'},
-                    {value: 'option3', label: 'Профиль 3'},
-                    {value: 'option4', label: 'Профиль 4'},
-                    {value: 'option5', label: 'Профиль 5'},
+                    {value: 'option3', label: 'Профиль 3'}
                 ]} label={'Выберите профиль: '} onChange={handleOnChange}/>
             </GreyComponent>
             <GreyComponent>
                 <DropdownComponent options={[
                     {value: 'option1', label: 'Артикул 1'},
                     {value: 'option2', label: 'Артикул 2'},
-                    {value: 'option3', label: 'Артикул 3'},
-                    {value: 'option4', label: 'Артикул 4'},
-                    {value: 'option5', label: 'Артикул 5'},
+                    {value: 'option3', label: 'Артикул 3'}
                 ]} label={'Выберите Артикул: '} onChange={handleOnChange}/>
             </GreyComponent>
             <GreyComponent>

@@ -12,19 +12,11 @@ import {ContactPages, MainPages} from './pages/Pages'
 const App = () => {
     const [globalDataPositions, setGlobalDataPositions] = useState(new Map())
     const [globalDataContact, setGlobalDataContact] = useState(new Map())
+    const url = 'https://isaev-top.org/django/form_api/order';
 
     // form request with globalDataPosition and GlobalDataContact
 
     const handleChangePositions = (dataPositions) => {
-        console.log("length: " + dataPositions.length);
-        for (let i = 0; i < dataPositions.length; i++) {
-            console.log("globalDataPositions color: " + dataPositions[i].color);
-            console.log("globalDataPositions quantity: " + dataPositions[i].quantity);
-            console.log("globalDataPositions profile: " + dataPositions[i].profile);
-            console.log("globalDataPositions article: " + dataPositions[i].article);
-            console.log("globalDataPositions note: " + dataPositions[i].note);
-            console.log("-----------------------------------------")
-        }
         setGlobalDataPositions(dataPositions);
     }
     const handleChangeContact = (dataContact) => {
@@ -32,10 +24,53 @@ const App = () => {
         setGlobalDataContact(dataContact);
     }
 
+    const handleSendData = () => {
+        const standardizedItems = globalDataPositions.map(item => {
+            return {
+                "prof_id": parseInt(item.profile.slice(6)),
+                "number_id": parseInt(item.article.slice(6)),
+                "inner_color_id": "color1",
+                "outer_color_id": "color2",
+                "amount": item.quantity,
+                "notes": item.note
+            }
+        })
+        const dataToSend = {
+            "organization": globalDataContact.organization,
+            "address": globalDataContact.address,
+            "email": globalDataContact.email,
+            "phone": globalDataContact.mobile,
+            "items": standardizedItems
+        }
+        const jsonData = JSON.stringify(dataToSend);
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+
+            },
+            body: jsonData
+        };
+        fetch(url, options)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Response from server:', data);
+            })
+            .catch(error => {
+                console.error('Error sending data to server:', error);
+            });
+    }
+
     return (
         <Router>
             <Routes>
-                <Route path='/contact' element={<ContactPages onChange={handleChangeContact}/>}/>
+                <Route path='/contact' element={<ContactPages onChange={handleChangeContact}
+                                                              onClick={handleSendData}/>}/>
                 <Route path='/' element={<MainPages onChange={handleChangePositions}/>}/>
             </Routes>
         </Router>

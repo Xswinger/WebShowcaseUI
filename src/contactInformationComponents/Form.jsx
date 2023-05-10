@@ -108,7 +108,7 @@ function PhoneField(props) {
             </div>
             <div className="field-body">
                 <div className="field">
-                    <input type={'text'} className="input" onChange={validate}></input>
+                    <input type={'text'} className="input" onChange={validate}/>
                 </div>
             </div>
         </div>
