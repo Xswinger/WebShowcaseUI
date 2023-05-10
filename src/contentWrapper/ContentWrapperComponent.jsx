@@ -3,10 +3,12 @@ import OrderInfoComponent from '../ordercomponent/orderInfoComponent/OrderInfoCo
 import PositionWrapper from '../ordercomponent/positionsWrapper/PositionsWrapperComponent'
 import style from './ContentWrapperComponent.module.css'
 import {useNavigate} from 'react-router-dom'
+import PlusButtonComponent from './addButton/PlusButtonComponent'
 
 const ContentWrapperComponent = (props) => {
 
     const [actualData, setActualData] = useState(new Map());
+    const [click, setClick] = useState(0);
 
     const handleRedirect = () => {
 
@@ -45,8 +47,11 @@ const ContentWrapperComponent = (props) => {
 
     return (
         <div className={style.wrapper}>
-            <OrderInfoComponent/>
-            <PositionWrapper onChange={handleOnChange} onAdd={handleOnAdd} onRemove={handleOnRemove}/>
+            <div>
+                <OrderInfoComponent/>
+                {/*<PlusButtonComponent onAdd={handleOnAdd} onClick={}/>*/}
+            </div>
+            <PositionWrapper onChange={handleOnChange} onRemove={handleOnRemove}/>
             <RedirectButton onClick={handleRedirect}/>
         </div>
     )
@@ -61,8 +66,10 @@ function RedirectButton() {
     }
 
     return (
-        <div className={style.redirect_button_wrapper}>
-            <button className={style.redirect_button} onClick={navigateContact}> Оформить заказ</button>
+        <div className="columns is-mobile is-centered">
+            <div className="column is-narrow mt-2">
+                <button className="button is-success is-medium" onClick={navigateContact}>Оформить заказ</button>
+            </div>
         </div>
     )
 }

@@ -47,7 +47,7 @@ const PositionComponent = (props) => {
                 <NoteComponent onChange={handleOnChange}    />
             </GreyComponent>
             <GreyComponent>
-                <button onClick={handleRemoveClick}>Remove</button>
+                <button className="button is-danger" onClick={handleRemoveClick}>Удалить</button>
             </GreyComponent>
         </div>
     );

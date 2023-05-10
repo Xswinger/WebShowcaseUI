@@ -38,8 +38,8 @@ export const ContactPages = (props) => {
 
 function Header(props) {
     return (
-        <header className={style.header}>
-            <h1 className={style.title}> {props.title.text} </h1>
+        <header className="m-4 ml-6">
+            <h6 className="title is-2 has-text-white"> {props.title.text} </h6>
         </header>
     );
 }

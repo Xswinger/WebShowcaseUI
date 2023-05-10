@@ -15,13 +15,15 @@ const dropdownComponent = (props) => {
     return (
         <div>
             <label htmlFor="dropdown">{props.label}</label>
-            <select id="dropdown" value={selectedValue} onChange={handleChange} className={style.container}>
-                {props.options.map((option) => (
-                    <option key={option.value} value={option.value} className={style.container}>
-                        {option.label}
-                    </option>
-                ))}
-            </select>
+            <div className="select">
+                <select id="dropdown" value={selectedValue} onChange={handleChange}>
+                    {props.options.map((option) => (
+                        <option key={option.value} value={option.value} className={style.container}>
+                            {option.label}
+                        </option>
+                    ))}
+                </select>
+            </div>
         </div>
     );
 };

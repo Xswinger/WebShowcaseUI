@@ -13,8 +13,11 @@ function noteComponent(props) {
     return (
         <div className={style.notes}>
             <label htmlFor={'note'}>Примечания:</label>
-            <br/>
-            <textarea name={'note'} value={note} onChange={handleNoteChange} className={style.container}/>
+            <div className="field">
+                <div className="control">
+                    <textarea name={'note'} value={note} onChange={handleNoteChange} className="textarea is-small"/>
+                </div>
+            </div>
         </div>
     );
 }

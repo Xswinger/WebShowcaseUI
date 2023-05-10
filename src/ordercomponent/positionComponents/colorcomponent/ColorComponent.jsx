@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import ColorSquareComponent from "./squarecomponent/ColorSquareComponent";
-import style from "./ColorComponent.module.css";
 
 
 const colorComponent = (props) => {

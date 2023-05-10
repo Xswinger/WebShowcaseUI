@@ -3,18 +3,19 @@ import style from "./InfoComponent.module.css";
 
 function CustomerTitle(props) {
     return (
-        <div className={style.title}>
-            <span>{props.title}</span>
-        </div>
+        <label className="label is-size-5 mb-0">{props.title}</label>
     )
 }
 
 const infoComponent = (props) => {
     return (
         <div className={style.wrapper}>
-            <CustomerTitle title={props.header}/>
-            <br/>
-            <input type={'text'} className={style.text}></input>
+            <div className="field">
+                <CustomerTitle title={props.header}/>
+                <div className="control">
+                    <input className="input is-normal" type="text"></input>
+                </div>
+            </div>
         </div>
     );
 }

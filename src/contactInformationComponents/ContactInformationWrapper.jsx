@@ -15,7 +15,7 @@ const ContactInformationWrapper = (props) => {
 
 function ButtonsWrapper() {
     return (
-        <div className={style.buttons_wrapper}>
+        <div className="m-3">
             <AcceptButton/>
             <BackButton/>
         </div>
@@ -32,15 +32,15 @@ function BackButton() {
 
     return (
         <div>
-            <button className={style.back_button} onClick={navigateMain}> Вернуться </button>
+            <button className="button is-danger" onClick={navigateMain}> Вернуться </button>
         </div>
     )
 }
 
 function AcceptButton() {
     return (
-        <div>
-            <button className={style.accept_button}> Подтвердить заказ </button>
+        <div className="m-2">
+            <button className="button is-success"> Подтвердить заказ </button>
         </div>
     )
 }

@@ -22,7 +22,7 @@ const inputComponent = (props) => {
     return (
         <div>
             <label htmlFor={props.name}>{props.label}</label>
-            <input className={style.container}
+            <input className="input"
                 type="text"
                 name={props.name}
                 value={inputValue}

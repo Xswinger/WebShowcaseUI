@@ -1,12 +1,9 @@
 import React, {useState} from 'react'
-import style from '../ordercomponent/orderInfoComponent/InfoComponent/InfoComponent.module.css'
 import validator from 'validator/es'
 
 function CustomerTitle(props) {
     return (
-        <div className={style.title}>
-            <h3>{props.title}</h3>
-        </div>
+        <label className="label">{props.title}</label>
     )
 }
 
@@ -65,10 +62,15 @@ function InputField(props) {
     }
 
     return (
-        <div>
-            <CustomerTitle title={props.header}/>
-            <br/>
-            <input type={'text'} className={style.text} onChange={handleInputChange}/>
+        <div className="field is-horizontal">
+            <div className="field-label is-normal">
+                <CustomerTitle title={props.header}/>
+            </div>
+            <div className="field-body">
+                <div className="field">
+                    <input className="input is-normal" type="text" onChange={handleInputChange}/>
+                </div>
+            </div>
         </div>
     )
 }
@@ -99,10 +101,16 @@ function PhoneField(props) {
 
 
     return(
-        <div>
-            <CustomerTitle title={props.header}/>
-            <br/>
-            <input type={'text'} className={valid ? style.default_input: style.bad_input} onChange={validate}></input>
+
+        <div className="field is-horizontal">
+            <div className="field-label is-normal">
+                <CustomerTitle title={props.header}/>
+            </div>
+            <div className="field-body">
+                <div className="field">
+                    <input type={'text'} className="input" onChange={validate}></input>
+                </div>
+            </div>
         </div>
     )
 }
@@ -126,10 +134,16 @@ function EmailField(props) {
     }
 
     return(
-        <div>
-            <CustomerTitle title={props.header}/>
-            <br/>
-            <input type={'text'} className={valid ? style.default_input: style.bad_input} onChange={validate}></input>
+
+        <div className="field is-horizontal">
+            <div className="field-label is-normal">
+                <CustomerTitle title={props.header}/>
+            </div>
+            <div className="field-body">
+                <div className="field">
+                    <input type={'text'} className="input" onChange={validate}></input>
+                </div>
+            </div>
         </div>
     )
 }
@@ -145,9 +159,14 @@ function Checkbox(props) {
         props.onChange(props.header, click);
     }
     return (
-        <div>
-            <CustomerTitle title={props.header}/>
-            <input type={'checkbox'} onChange={handleClickChange}/>
+
+        <div className="field is-horizontal">
+            <div className="field-label is-normal">
+                <CustomerTitle title={props.header}/>
+            </div>
+            <div className="field-body is">
+                <input type={'checkbox'} className="checkbox is-medium" onChange={handleClickChange}/>
+            </div>
         </div>
     )
 }
