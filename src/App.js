@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import {ContactPages, MainPages} from './pages/Pages'
 
-//
+
 
 const App = () => {
     const [globalDataPositions, setGlobalDataPositions] = useState(new Map())
@@ -27,10 +27,10 @@ const App = () => {
     const handleSendData = () => {
         const standardizedItems = globalDataPositions.map(item => {
             return {
-                "prof_id": parseInt(item.profile.slice(6)),
-                "number_id": parseInt(item.article.slice(6)),
-                "inner_color_id": "color1",
-                "outer_color_id": "color2",
+                "prof_id": parseInt(item.profile.slice(6)) + 4,
+                "number_id": parseInt(item.article.slice(6)) + 4,
+                "inner_color_id": "KZ205-U6",
+                "outer_color_id": "KZ205-U6",
                 "amount": item.quantity,
                 "notes": item.note
             }

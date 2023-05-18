@@ -28,7 +28,7 @@ const positionsWrapperComponent = (props) => {
     for (let i = 0; i < orders.length; i++) {
         const order = orders[i];
         orderComponents.push(<PositionComponent key={order} index={order} onRemove={handleOrderRemove}
-                                                onChange={handleChange}/>);
+                                                onChange={handleChange} onAdd={handleOrderAdd}/>);
     }
 
     return (

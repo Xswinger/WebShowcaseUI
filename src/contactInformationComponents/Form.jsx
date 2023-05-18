@@ -67,7 +67,7 @@ function InputField(props) {
                 <CustomerTitle title={props.header}/>
             </div>
             <div className="field-body">
-                <div className="field">
+                <div className="field"> 
                     <input className="input is-normal" type="text" onChange={handleInputChange}/>
                 </div>
             </div>

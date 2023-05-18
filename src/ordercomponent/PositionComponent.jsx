@@ -40,7 +40,7 @@ const PositionComponent = (props) => {
                 ]} label={'Выберите Артикул: '} onChange={handleOnChange}/>
             </GreyComponent>
             <GreyComponent>
-                <NoteComponent onChange={handleOnChange}    />
+                <NoteComponent onChange={handleOnChange}/>
             </GreyComponent>
             <GreyComponent>
                 <button className="button is-danger" onClick={handleRemoveClick}>Удалить</button>

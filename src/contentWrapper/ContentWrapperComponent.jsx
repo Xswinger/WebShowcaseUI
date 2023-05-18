@@ -47,7 +47,7 @@ const ContentWrapperComponent = (props) => {
                 <OrderInfoComponent/>
                 {/*<PlusButtonComponent onAdd={handleOnAdd} onClick={}/>*/}
             </div>
-            <PositionWrapper onChange={handleOnChange} onRemove={handleOnRemove}/>
+            <PositionWrapper onChange={handleOnChange} onRemove={handleOnRemove} onAdd={handleOnAdd}/>
             <RedirectButton/>
         </div>
     )
