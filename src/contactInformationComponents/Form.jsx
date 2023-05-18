@@ -77,7 +77,7 @@ function InputField(props) {
 
 function PhoneField(props) {
 
-    let valid = true;
+    const [valid, setValid] = useState(false)
 
     function validate(event) {
         let value = event.target.value
@@ -90,11 +90,9 @@ function PhoneField(props) {
             .replace('-', '')
 
         if (validator.isMobilePhone(value, ['ru-RU'])) {
-            valid = true;
-            console.log("mobile is true")
+            setValid(true)
         } else {
-            valid = false;
-            console.log("mobile is false")
+            setValid(false)
         }
 
     }
@@ -108,7 +106,8 @@ function PhoneField(props) {
             </div>
             <div className="field-body">
                 <div className="field">
-                    <input type={'text'} className="input" onChange={validate}/>
+                    {valid ? <h1></h1> : <h1>Введен неверный номер</h1>}
+                    <input type="text" className="input" onChange={validate}/>
                 </div>
             </div>
         </div>
@@ -117,18 +116,16 @@ function PhoneField(props) {
 
 function EmailField(props) {
 
-    let valid = true;
+    const [valid, setValid] = useState(false)
 
     function validate(event) {
         let value = event.target.value
         props.onChange(props.header, value);
 
         if (validator.isEmail(value)) {
-            valid = true;
-            console.log("email is true")
+            setValid(true)
         } else {
-            valid = false;
-            console.log("email is true")
+            setValid(false)
         }
 
     }
@@ -141,6 +138,7 @@ function EmailField(props) {
             </div>
             <div className="field-body">
                 <div className="field">
+                    {valid ? <h1></h1> : <h1>Введен неверный адрес почты</h1>}
                     <input type={'text'} className="input" onChange={validate}></input>
                 </div>
             </div>

@@ -18,7 +18,7 @@ const PositionComponent = (props) => {
     }
 
     return (
-        <div className={style.container}>
+        <div className="columns" style={{backgroundColor: "#696969", borderRadius: "20px", justifyContent: "space-evenly", margin: "0 0 5px 0"}}>
             <GreyComponent>
                 <ColorComponent onChange={handleOnChange}/>
             </GreyComponent>

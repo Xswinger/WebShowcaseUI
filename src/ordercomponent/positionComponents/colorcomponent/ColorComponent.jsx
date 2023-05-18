@@ -57,17 +57,17 @@ const colorComponent = (props) => {
 
     return (
         <>
-            <button onClick={handleClick}>Color Table</button>
+            <button className="button" onClick={handleClick}>Color Table</button>
             {showTable && (
                 <>
-                    <table>
+                    <table className="table">
                         <tbody>
                         {tableRows}
                         </tbody>
                     </table>
                     <div>
-                        <button onClick={handlePrevClick} disabled={page === 1}>Previous Page</button>
-                        <button onClick={handleNextClick} disabled={endIndex >= tableData.length}>Next Page</button>
+                        <button className="button" onClick={handlePrevClick} disabled={page === 1}>Previous Page</button>
+                        <button className="button" onClick={handleNextClick} disabled={endIndex >= tableData.length}>Next Page</button>
                     </div>
                 </>
             )}
