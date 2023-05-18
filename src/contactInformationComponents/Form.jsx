@@ -18,6 +18,8 @@ const Form = (props) => {
         delivery: ""
     })
 
+    const [checkbox, setCheckbox] = useState(false)
+
     const handleChange = (field, value) => {
         const data = contactData;
         if (field === 'Организация') {
@@ -31,6 +33,7 @@ const Form = (props) => {
         }
         if (field === 'Доставка') {
             data.delivery = value % 2 !== 0;
+            setCheckbox(value % 2 !== 0)
         }
         if (field === 'Адрес доставки') {
             data.address = value;
@@ -48,8 +51,8 @@ const Form = (props) => {
             <PhoneField header={'Телефон'} onChange={handleChange}/>
             <EmailField header={'Почта'} onChange={handleChange}/>
             <Checkbox header={'Доставка'} onChange={handleChange}/>
-            <InputField header={'Адрес доставки'} onChange={handleChange}/>
-            <InputField header={'Заказчик'} onChange={handleChange}/>
+            <InputField header={'Адрес доставки'} onChange={handleChange} checkbox={checkbox}/>
+            <InputField header={'Заказчик'} onChange={handleChange} checkbox={checkbox}/>
         </div>
     )
 }
@@ -67,8 +70,11 @@ function InputField(props) {
                 <CustomerTitle title={props.header}/>
             </div>
             <div className="field-body">
-                <div className="field"> 
-                    <input className="input is-normal" type="text" onChange={handleInputChange}/>
+                <div className="field">
+                    {(props.header === 'Организация' || props.checkbox)
+                        ? <input className="input is-normal" type="text" onChange={handleInputChange}/>
+                        : <input className="input is-normal" type="text" disabled={true} onChange={handleInputChange}/>
+                    }
                 </div>
             </div>
         </div>
@@ -78,9 +84,15 @@ function InputField(props) {
 function PhoneField(props) {
 
     const [valid, setValid] = useState(false)
+    const [value, setValue] = useState()
+    const [focus, setFocus] = useState(false)
 
     function validate(event) {
         let value = event.target.value
+
+        setValue(value)
+        setFocus(true)
+
         props.onChange(props.header, value);
         value = value.replace(/\D/g, '')
             .replace(/^7/, '8')
@@ -106,8 +118,16 @@ function PhoneField(props) {
             </div>
             <div className="field-body">
                 <div className="field">
-                    {valid ? <h1></h1> : <h1>Введен неверный номер</h1>}
-                    <input type="text" className="input" onChange={validate}/>
+                    {valid &&
+                        <input type={'text'} className="input is-success" onChange={validate} value={value} autoFocus={true}></input>
+                    }
+                    {((!valid || value === "") && focus) &&
+                        <><input type={'text'} className="input is-danger" onChange={validate} value={value} autoFocus={true}></input>
+                            <p className="help is-danger">Некорректное значение поля</p></>
+                    }
+                    {!focus &&
+                        <input type={'text'} className="input" onChange={validate} value={value}></input>
+                    }
                 </div>
             </div>
         </div>
@@ -117,9 +137,15 @@ function PhoneField(props) {
 function EmailField(props) {
 
     const [valid, setValid] = useState(false)
+    const [value, setValue] = useState()
+    const [focus, setFocus] = useState(false)
 
     function validate(event) {
         let value = event.target.value
+
+        setValue(value)
+        setFocus(true)
+
         props.onChange(props.header, value);
 
         if (validator.isEmail(value)) {
@@ -127,7 +153,6 @@ function EmailField(props) {
         } else {
             setValid(false)
         }
-
     }
 
     return(
@@ -138,8 +163,16 @@ function EmailField(props) {
             </div>
             <div className="field-body">
                 <div className="field">
-                    {valid ? <h1></h1> : <h1>Введен неверный адрес почты</h1>}
-                    <input type={'text'} className="input" onChange={validate}></input>
+                    {valid &&
+                        <input type={'text'} className="input is-success" onChange={validate} value={value} autoFocus={true}></input>
+                    }
+                    {((!valid || value === "") && focus) &&
+                        <><input type={'text'} className="input is-danger" onChange={validate} value={value} autoFocus={true}></input>
+                        <p className="help is-danger">Некорректное значение поля</p></>
+                    }
+                    {!focus &&
+                        <input type={'text'} className="input" onChange={validate} value={value}></input>
+                    }
                 </div>
             </div>
         </div>

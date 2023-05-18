@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import style from "./InfoComponent.module.css";
 
 function CustomerTitle(props) {
@@ -8,12 +8,18 @@ function CustomerTitle(props) {
 }
 
 const infoComponent = (props) => {
+
+    function handleValue(event) {
+        let value = event.target.value
+        props.onChange(value)
+    }
+
     return (
         <div className={style.wrapper}>
             <div className="field">
                 <CustomerTitle title={props.header}/>
                 <div className="control">
-                    <input className="input is-normal" type="text"></input>
+                    <input className="input is-normal" type="text" onChange={handleValue}></input>
                 </div>
             </div>
         </div>

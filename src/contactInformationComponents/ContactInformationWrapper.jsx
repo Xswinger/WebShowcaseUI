@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import style from './ContactInformationWrapper.module.css'
 import Form from './Form'
 import {useNavigate} from 'react-router-dom'
 
 
 const ContactInformationWrapper = (props) => {
+
     return (
         <div className={style.wrapper}>
             <Form onChange={props.onChange}/>
@@ -16,7 +17,7 @@ const ContactInformationWrapper = (props) => {
 function ButtonsWrapper(props) {
     return (
         <div className="m-3">
-            <AcceptButton onClick={props.onClick}/>
+            <AcceptButton onClick={props.onClick} checkbox={props.checkbox}/>
             <BackButton/>
         </div>
     )
@@ -38,6 +39,7 @@ function BackButton() {
 }
 
 function AcceptButton(props) {
+
     return (
         <div className="m-2">
             <button className="button is-success" onClick={props.onClick}> Подтвердить заказ </button>

@@ -9,6 +9,9 @@ const ContentWrapperComponent = (props) => {
 
     const [actualData, setActualData] = useState(new Map());
     const [click, setClick] = useState(0);
+    const [value, setValue] = useState(0);
+    const [customer, setCustomer] = useState();
+    const [number, setNumber] = useState();
 
     const handleOnChange = (id, field, value) => {
         const data = [...actualData];
@@ -30,6 +33,7 @@ const ContentWrapperComponent = (props) => {
     const handleOnAdd = (id) => {
         const data = [...actualData, {color: "", quantity: 0, profile: 'option1', article: 'option1', note: ""}];
         setActualData(data);
+        setValue(value+1);
         props.onChange(data);
     }
 
@@ -37,6 +41,7 @@ const ContentWrapperComponent = (props) => {
         const data = [...actualData]
         data[index] = null;
         setActualData(data);
+        setValue(value-1);
         props.onChange(data);
     }
 
@@ -45,15 +50,15 @@ const ContentWrapperComponent = (props) => {
         <div className={style.wrapper}>
             <div>
                 <OrderInfoComponent/>
-                {/*<PlusButtonComponent onAdd={handleOnAdd} onClick={}/>*/}
+                {/*<PlusButtonComponent onClick={handleOnAdd}/>*/}
             </div>
             <PositionWrapper onChange={handleOnChange} onRemove={handleOnRemove} onAdd={handleOnAdd}/>
-            <RedirectButton/>
+            <RedirectButton orderCount={value}/>
         </div>
     )
 }
 
-function RedirectButton() {
+function RedirectButton(props) {
 
     const navigate = useNavigate()
 
@@ -64,7 +69,10 @@ function RedirectButton() {
     return (
         <div className="columns is-mobile is-centered">
             <div className="column is-narrow mt-2">
-                <button className="button is-success is-medium" onClick={navigateContact}>Оформить заказ</button>
+                {props.orderCount === 0
+                    ? <button className="button is-success is-medium" onClick={navigateContact} disabled={true}>Оформить заказ</button>
+                    : <button className="button is-success is-medium" onClick={navigateContact}>Оформить заказ</button>
+                }
             </div>
         </div>
     )
