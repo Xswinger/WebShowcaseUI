@@ -3,21 +3,19 @@ import OrderInfoComponent from '../ordercomponent/orderInfoComponent/OrderInfoCo
 import PositionWrapper from '../ordercomponent/positionsWrapper/PositionsWrapperComponent'
 import style from './ContentWrapperComponent.module.css'
 import {useNavigate} from 'react-router-dom'
-import PlusButtonComponent from './addButton/PlusButtonComponent'
+import PlusButtonComponent from "./addButton/PlusButtonComponent";
 
 const ContentWrapperComponent = (props) => {
 
     const [actualData, setActualData] = useState(new Map());
-    const [click, setClick] = useState(0);
     const [value, setValue] = useState(0);
-    const [customer, setCustomer] = useState();
-    const [number, setNumber] = useState();
+    const [trigger, setTrigger] = useState(0);
 
     const handleOnChange = (id, field, value) => {
         const data = [...actualData];
-        if (field === 'профиль:') {
+        if (field === 'profile') {
             data[id].profile = value;
-        } else if (field === 'Артикул:') {
+        } else if (field === 'article') {
             data[id].article = value;
         } else if (field === 'Note') {
             data[id].note = value;
@@ -30,7 +28,7 @@ const ContentWrapperComponent = (props) => {
         props.onChange(actualData);
     }
 
-    const handleOnAdd = (id) => {
+    const handleOnAdd = () => {
         const data = [...actualData, {color: "", quantity: 0, profile: 'option1', article: 'option1', note: ""}];
         setActualData(data);
         setValue(value+1);
@@ -50,9 +48,12 @@ const ContentWrapperComponent = (props) => {
         <div className={style.wrapper}>
             <div>
                 <OrderInfoComponent/>
-                {/*<PlusButtonComponent onClick={handleOnAdd}/>*/}
+                <PlusButtonComponent onClick={() => {
+                    setTrigger((trigger) => trigger + 1)
+                }}/>
             </div>
-            <PositionWrapper onChange={handleOnChange} onRemove={handleOnRemove} onAdd={handleOnAdd}/>
+            <PositionWrapper onChange={handleOnChange} onRemove={handleOnRemove} onAdd={handleOnAdd}
+            colors={props.colors} articles={props.articles} profiles={props.profiles} trigger={trigger}/>
             <RedirectButton orderCount={value}/>
         </div>
     )

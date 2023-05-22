@@ -10,12 +10,14 @@ const titles = [
 
 
 export const MainPages = (props) => {
+
     return (
         <div>
             <div className={style.wrapper}>
                 <Header title={titles.at(0)}/>
                 <div className={style.body}>
-                    <ContentWrapperComponent onChange={props.onChange}/>
+                    <ContentWrapperComponent onChange={props.onChange} articles={props.articles}
+                    profiles={props.profiles} colors={props.colors}/>
                 </div>
             </div>
         </div>

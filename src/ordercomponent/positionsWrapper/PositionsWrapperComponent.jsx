@@ -1,7 +1,6 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import style from "./PositionsWrapperComponent.module.css"
 import PositionComponent from '../PositionComponent'
-import PlusButtonComponent from "../../contentWrapper/addButton/PlusButtonComponent";
 
 const positionsWrapperComponent = (props) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -13,6 +12,13 @@ const positionsWrapperComponent = (props) => {
         setOrders([...orders, orders.length + removed]);
         props.onAdd();
     };
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+        if (props.trigger) {
+            handleOrderAdd();
+        }
+    }, [props.trigger])
 
     const handleOrderRemove = (orderToRemove) => {
         setOrders(orders.filter((element) => element !== orderToRemove));
@@ -28,12 +34,13 @@ const positionsWrapperComponent = (props) => {
     for (let i = 0; i < orders.length; i++) {
         const order = orders[i];
         orderComponents.push(<PositionComponent key={order} index={order} onRemove={handleOrderRemove}
-                                                onChange={handleChange} onAdd={handleOrderAdd}/>);
+                                                onChange={handleChange}
+                                                articles={props.articles} profiles={props.profiles}
+                                                colors={props.colors}/>);
     }
 
     return (
         <div className={style.wrapper}>
-            <PlusButtonComponent onClick={handleOrderAdd}/>
             {orderComponents}
         </div>
     );

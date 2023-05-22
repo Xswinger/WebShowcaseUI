@@ -1,8 +1,12 @@
 import React from 'react';
 
 const PlusButtonComponent = ({ onClick }) => {
+    const plusButtonStyle = {
+        float: 'right',
+        bottom: '-40px'
+    }
     return (
-        <button className="button is-success" style={{float: 'right'}} onClick={onClick}>Добавить</button>
+        <button className="button is-success" style={plusButtonStyle} onClick={onClick}>Добавить</button>
     );
 }
 

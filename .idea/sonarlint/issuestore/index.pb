@@ -1,8 +1,6 @@
 
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-?
-src/App.test.js,9\2\923703ced91ac38943d37930d9d27a7ebe8f01ad
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
@@ -16,25 +14,11 @@ Esrc/ordercomponent/orderInfoComponent/InfoComponent/InfoComponent.jsx,3\c\3cce
 Lsrc/ordercomponent/orderInfoComponent/InfoComponent/InfoComponent.module.css,a\d\adedd3be07aee2d68dc3e4e112515b280f9f222c
 s
 Csrc/ordercomponent/orderInfoComponent/OrderInfoComponent.module.css,2\a\2ae3fad9d4060e2402a48dadaed42ee71d0a4688
-u
-Esrc/ordercomponent/positionComponents/greycomponent/GreyComponent.jsx,9\1\91a41af86af6024b12786b50b6119e30c3f3a83a
-}
-Msrc/ordercomponent/positionComponents/dropdowncomponent/DropdownComponent.jsx,8\d\8d7b21c4cbdc59ff33f3652048c91c20c8180213
-w
-Gsrc/ordercomponent/positionComponents/colorcomponent/ColorComponent.jsx,8\e\8eee4106828562843b8e77ff03e87517a4956b17
-ç
-]src/ordercomponent/positionComponents/colorcomponent/squarecomponent/ColorSquareComponent.jsx,d\1\d166c9174e4ca6479d426198c17ce86c7a1e2223
 î
 dsrc/ordercomponent/positionComponents/colorcomponent/squarecomponent/ColorSquareComponent.module.css,3\3\3345628cdb5772fbfbde3165c79ff1b897ab38c4
-C
-src/pages/Pages.jsx,d\6\d633fc1e97b5f30c00b9865d443cca2789b350f7
 l
 <src/ordercomponent/orderInfoComponent/OrderInfoComponent.jsx,e\d\ed3ce185f151ae8f3f904819082065dd0832b0b7
-n
->src/contactInformationComponents/ContactInformationWrapper.jsx,c\1\c12c440ab9a73da3268cb6c8d8a25a6a0ef2f079
 u
 Esrc/contactInformationComponents/ContactInformationWrapper.module.css,f\9\f96855af4073c0a67344a24bd32cd4ebff36be91
 `
 0src/contactInformationComponents/Form.module.css,4\7\475b81124a196e9e6d558ef927e6fcca03719026
-d
-4src/contentWrapper/addButton/PlusButtonComponent.jsx,5\6\5652d30642f274523c5c098859ccdef22e16ce40

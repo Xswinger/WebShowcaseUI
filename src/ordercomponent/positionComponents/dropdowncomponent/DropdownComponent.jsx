@@ -8,8 +8,7 @@ const dropdownComponent = (props) => {
 
     const handleChange = (event) => {
         setSelectedValue(event.target.value);
-        console.log(event.target.value);
-        props.onChange(props.label.split(' ')[1], event.target.value)
+        props.onChange(props.type, event.target.value)
     };
 
     return (

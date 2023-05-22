@@ -1,20 +1,59 @@
 import './App.css';
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {
     BrowserRouter as Router,
     Route,
     Routes
 } from 'react-router-dom';
 import {ContactPages, MainPages} from './pages/Pages'
+import axios from "axios";
 
 
 
 const App = () => {
     const [globalDataPositions, setGlobalDataPositions] = useState(new Map())
     const [globalDataContact, setGlobalDataContact] = useState(new Map())
-    const url = 'https://isaev-top.org/django/form_api/order';
+    const url = 'https://leshainc.ru/form_api/';
+    const order = 'order';
+    const colorsEndPoint = 'colors';
+    const profilesEndPoint = 'profiles';
+    const articlesEndPoint = 'item_numbers';
+    const [profilesFromServer, setProfilesFromServer] = useState(null);
+    const [articlesFromServer, setArticlesFromServer] = useState(null);
+    const [colorsFromServer, setColorsFromServer] = useState(null);
 
-    // form request with globalDataPosition and GlobalDataContact
+    useEffect(() => {
+        axios.get(url+profilesEndPoint)
+            .then(response => {
+                console.log(response);
+                setProfilesFromServer(response.data);
+            })
+            .catch(error => {
+                console.log('Error fetching data:', error);
+            })
+    }, [])
+
+    useEffect(() => {
+        axios.get(url+articlesEndPoint)
+            .then(response => {
+                console.log(response);
+                setArticlesFromServer(response.data);
+            })
+            .catch(error => {
+                console.log('Error fetching data:', error);
+            })
+    }, [])
+
+    useEffect(() => {
+        axios.get(url+colorsEndPoint)
+            .then(response => {
+                console.log(response);
+                setColorsFromServer(response.data);
+            })
+            .catch(error => {
+                console.log('Error fetching data:', error);
+            })
+    }, [])
 
     const handleChangePositions = (dataPositions) => {
         setGlobalDataPositions(dataPositions);
@@ -27,10 +66,10 @@ const App = () => {
     const handleSendData = () => {
         const standardizedItems = globalDataPositions.map(item => {
             return {
-                "prof_id": parseInt(item.profile.slice(6)) + 4,
-                "number_id": parseInt(item.article.slice(6)) + 4,
-                "inner_color_id": "KZ205-U6",
-                "outer_color_id": "KZ205-U6",
+                "prof_id": parseInt(item.profile.slice(6)),
+                "number_id": parseInt(item.article.slice(6)),
+                "inner_color_id": item.color,
+                "outer_color_id": item.color,
                 "amount": item.quantity,
                 "notes": item.note
             }
@@ -51,7 +90,8 @@ const App = () => {
             },
             body: jsonData
         };
-        fetch(url, options)
+        console.log('data to send: ', jsonData)
+        fetch(url + order, options)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -71,7 +111,8 @@ const App = () => {
             <Routes>
                 <Route path='/contact' element={<ContactPages onChange={handleChangeContact}
                                                               onClick={handleSendData}/>}/>
-                <Route path='/' element={<MainPages onChange={handleChangePositions}/>}/>
+                <Route path='/' element={<MainPages onChange={handleChangePositions} profiles={profilesFromServer}
+                articles={articlesFromServer} colors={colorsFromServer}/>}/>
             </Routes>
         </Router>
     );

@@ -2,11 +2,10 @@ import React from 'react';
 
 const ColorSquareComponent = ({color, onClick, isSquareSelected}) => {
     const squareStyle = {
-        width: '25px',
-        height: '25px',
-        backgroundColor: color,
-        border: isSquareSelected ? '2px solid black' : 'none',
-        boxSizing: 'border-box'
+        width: '30px',
+        height: '30px',
+        backgroundImage: 'url(https://leshainc.ru/' + color + ')',
+        border: isSquareSelected ? '3px solid red' : 'none'
     };
 
     return (
